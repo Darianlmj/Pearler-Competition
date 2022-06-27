@@ -18,6 +18,11 @@
   color: #EA6C4C;
 }
 
+.highlight {
+  color: #50B2B5;
+  font-weight: bold;
+}
+
 .button {
   display: flex;
   flex-direction: row;
@@ -25,7 +30,8 @@
   background-color: #50B2B5;
   color: #fff;
   border: none;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-radius: 0.25rem;
   font-size: 1rem;
   font-weight: bold;
