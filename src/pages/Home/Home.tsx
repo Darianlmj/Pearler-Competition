@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import styles from './Home.module.scss'
+import Header from '../../components/Header/Header'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faLeaf, faSeedling } from '@fortawesome/free-solid-svg-icons'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 const Home = () => {
@@ -48,7 +49,8 @@ const Home = () => {
     }
   }
 
-  return (
+  return (<>
+    <Header />
     <div className={styles.flexBox}>
       {/* Welcome Message */}
       {showWelcomeMessage &&
@@ -105,18 +107,22 @@ const Home = () => {
       {isTutorialFinished && 
         <>
           {/* Displaying the initial info */}
-          <div>
+          <div className={styles.dashboardHeader}>
             <h1 className={styles.header}>Preliminary Information</h1>
             <p className={styles.subheader}>Current Age: {currentAge} years old</p>
             <p className={styles.subheader}>Target Age: {targetAge} years old</p>
             <p className={styles.subheader}>Savings Goal: ${savingsGoal}</p>
           </div>
         
+          <div className={styles.horizontalBar}></div>
 
           {/* Dashboard for stats */}
-          <div>
-            <p className={styles.subheader2}>Based on the information provided...</p>
-            <h1 className={styles.header}>Pure Savings</h1>
+          <div className={styles.dashboardContent}>
+            <p className={styles.subheader2}>Based on your information...</p>
+            <h1 className={styles.header}>
+              Pure Savings &nbsp;
+              <FontAwesomeIcon icon={faLeaf as IconProp} />
+            </h1>
             <p className={styles.subheader}>
               If you save just 
               <span className={styles.highlight}> ${calcSavingsPerWeek()} </span>
@@ -125,11 +131,14 @@ const Home = () => {
               years.
             </p>
             
-            <h1 className={styles.header}>Investing with Pearler Micro</h1>
+            <h1 className={styles.header}>
+              Investing with Pearler Micro &nbsp;
+              <FontAwesomeIcon icon={faSeedling as IconProp} />
+            </h1>
           </div>
         </>}
     </div>
-  )
+  </>)
 }
 
 export default Home
