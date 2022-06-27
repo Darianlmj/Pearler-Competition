@@ -6,16 +6,16 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 const Home = () => {
-  const [currentAge, setCurrentAge] = useState(0);
-  const [targetAge, setTargetAge] = useState(0);
-  const [savingsGoal, setSavingsGoal] = useState(0);
+  const [currentAge, setCurrentAge] = useState<number>(0);
+  const [targetAge, setTargetAge] = useState<number>(0);
+  const [savingsGoal, setSavingsGoal] = useState<number>(0);
 
-  const [isTutorialStarted, setIsTutorialStarted] = useState(false);
-  const [showWelcomeMessage, setShowWelcomeMessage] = useState(true);
-  const [isStage1Done, setIsStage1Done] = useState(false);
-  const [isStage2Done, setIsStage2Done] = useState(false);
-  const [isStage3Done, setIsStage3Done] = useState(false);
-  const [isTutorialFinished, setIsTutorialFinished] = useState(false);
+  const [isTutorialStarted, setIsTutorialStarted] = useState<boolean>(false);
+  const [showWelcomeMessage, setShowWelcomeMessage] = useState<boolean>(true);
+  const [isStage1Done, setIsStage1Done] = useState<boolean>(false);
+  const [isStage2Done, setIsStage2Done] = useState<boolean>(false);
+  const [isStage3Done, setIsStage3Done] = useState<boolean>(false);
+  const [isTutorialFinished, setIsTutorialFinished] = useState<boolean>(false);
 
   const startTutorial = () => {
     setIsTutorialStarted(true);
