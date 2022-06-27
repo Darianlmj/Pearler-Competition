@@ -1,0 +1,39 @@
+.flexBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.header {
+  color: #222529;
+}
+.subheader {
+  color: #55607C;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #50B2B5;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+  &:hover {
+    background-color: #398386;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+}
+
+.buttonText {
+  margin-right: 0.75rem
+}
