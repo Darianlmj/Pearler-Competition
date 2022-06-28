@@ -1,9 +1,27 @@
-.flexBox {
+.horizontalBar {
+  display: block;
+  width: 70%;
+  border: 1px solid #55607c77;
+}
+
+.dashboardHeader {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 4rem);
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  width: 70%;
+  flex: 1;
+}
+
+.dashboardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 70%;
+  flex: 2;
 }
 
 .header {
@@ -20,6 +38,10 @@
 
 .highlight {
   color: #50B2B5;
+  font-weight: bold;
+}
+
+.bold {
   font-weight: bold;
 }
 
@@ -49,6 +71,14 @@
   margin-right: 0.75rem
 }
 
+.flexBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 4rem);
+}
+
 .input {
   background-color: #F4F5F7;
   padding: 1rem;
@@ -59,18 +89,5 @@
 
   &:focus {
     outline-color: #50B2B5;
-  }
-}
-
-.question {
-  animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

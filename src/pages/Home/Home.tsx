@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Home.module.scss'
 import Header from '../../components/Header/Header'
+import Dashboard from '../../components/Dashboard/Dashboard'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faLeaf, faSeedling } from '@fortawesome/free-solid-svg-icons'
@@ -23,9 +24,7 @@ const Home = () => {
     setShowWelcomeMessage(false);
   }
 
-  const calcSavingsPerWeek = () => {
-    return (savingsGoal / ((targetAge - currentAge) * 52)).toFixed(2);
-  }
+
 
   const checkStage1 = () => {
     if (currentAge > 0) {
@@ -66,7 +65,7 @@ const Home = () => {
 
       {/* Question about Age */}
       {isTutorialStarted && 
-        <div>
+        <div className={styles.question}>
           <h1 className={styles.header}>How old are you?</h1>
           <p className={styles.subheader}>Please enter your age below.</p>
           <input className={styles.input} type='number' placeholder='Age' onChange={e =>{setCurrentAge(e.target.valueAsNumber)}} />
@@ -80,7 +79,7 @@ const Home = () => {
 
       {/* Question about saving goals */}
       {isStage1Done &&
-        <div>
+        <div className={styles.question}>
           <h1 className={styles.header}>How much do you want to save?</h1>
           <p className={styles.subheader}>Please enter your saving goal below.</p>
           <input className={styles.input} type='number' placeholder='Goal' onChange={e => {setSavingsGoal(e.target.valueAsNumber)}} />
@@ -105,38 +104,9 @@ const Home = () => {
       }
 
       {isTutorialFinished && 
-        <>
-          {/* Displaying the initial info */}
-          <div className={styles.dashboardHeader}>
-            <h1 className={styles.header}>Preliminary Information</h1>
-            <p className={styles.subheader}>Current Age: {currentAge} years old</p>
-            <p className={styles.subheader}>Target Age: {targetAge} years old</p>
-            <p className={styles.subheader}>Savings Goal: ${savingsGoal}</p>
-          </div>
-        
-          <div className={styles.horizontalBar}></div>
-
-          {/* Dashboard for stats */}
-          <div className={styles.dashboardContent}>
-            <p className={styles.subheader2}>Based on your information...</p>
-            <h1 className={styles.header}>
-              Pure Savings &nbsp;
-              <FontAwesomeIcon icon={faLeaf as IconProp} />
-            </h1>
-            <p className={styles.subheader}>
-              If you save just 
-              <span className={styles.highlight}> ${calcSavingsPerWeek()} </span>
-              a week, you can easily achieve your goals in
-              <span className={styles.highlight}> {targetAge - currentAge} </span>
-              years.
-            </p>
-            
-            <h1 className={styles.header}>
-              Investing with Pearler Micro &nbsp;
-              <FontAwesomeIcon icon={faSeedling as IconProp} />
-            </h1>
-          </div>
-        </>}
+        <div>
+          <Dashboard currentAge={currentAge} targetAge={targetAge} savingsGoal={savingsGoal} />
+        </div>}
     </div>
   </>)
 }
