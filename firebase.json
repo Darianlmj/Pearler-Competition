@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "/",
+    "site": "jr-savings",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
