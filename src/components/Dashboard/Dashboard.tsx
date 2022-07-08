@@ -47,7 +47,7 @@ const Dashboard = (props: {currentAge: number, targetAge: number, savingsGoal: n
           If you save just 
           <span className={styles.highlight}> ${showRecalculateValue ? newSavingsAmount : calcSavingsPerWeek()} </span>
           a week, you can easily achieve your goals in just
-          <span className={styles.highlight}> {showRecalculateValue ? newEstimatedTimeToReachGoal + " weeks" : (targetAge - currentAge) + "years"}.</span>
+          <span className={styles.highlight}> {showRecalculateValue ? newEstimatedTimeToReachGoal + " weeks" : (targetAge - currentAge) + " years"}.</span>
         </p>
         
 
