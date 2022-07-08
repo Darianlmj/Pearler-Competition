@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Home.module.scss'
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 import Dashboard from '../../components/Dashboard/Dashboard'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -108,6 +109,7 @@ const Home = () => {
           <Dashboard currentAge={currentAge} targetAge={targetAge} savingsGoal={savingsGoal} />
         </div>}
     </div>
+    <Footer />
   </>)
 }
 
